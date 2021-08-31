@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('head.ejs') %> 
+<body>
+    <main class="container">
+        <div class="login-page">
+            <div class="form">
+              <form class="register-form text-start" name="join-form">
+                  <div class="mb-3">
+                    <label class="form-check-label" for="name">Name</label>
+                    <input type="text" placeholder="name" name="name" id="name" class="form-control" required>
+                  </div>
+                  <div class="mb-3" id="rooms" name="room">
+                    <label class="form-check-label" for="rooms">Select a room</label>
+                    <select class="form-select form-control mt-1" name="room" required>
+                      <% for(var i=0; i<rooms.length; i++) {%>
+                        <%if (i === 0) { %>
+                          <option selected>
+                            <%= rooms[i].name%>
+                          </option>
+                        <% }  else { %>
+                          <option value=`${i}`>
+                            <%= rooms[i].name%>
+                          </option>
+                          <% } %>
+                     <% } %>
+                    </select>
+                  </div>
+                  <button type="submit">Submit</button>
+              </form>
+            </div>
+        </div>
+    </main>
+    <%- include ('scripts.ejs') %>
+</body>
+</html>

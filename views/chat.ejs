@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('head.ejs') %> 
+<body>
+    <div class="container mt-1">
+        <div class="row rounded overflow-hidden shadow" id="window">
+          <div class="col-9 px-0 border border-3 border-success">
+            <div class="px-4 chat-box bg-white rounded-start h-100" id="chat-window">
+              <ul class="pt-2" id="messages"></ul>
+              <form class="d-flex" id="form">
+                <textarea placeholder="Type a message" class="chatbox" name="chatbox" minlength="2" id="input"></textarea>
+                <input class="submit-button" type="submit" value="send">
+            </form>
+            </div>
+          </div>
+          <div class="col-3 px-0 rounded-end border border-3 border-success  bg-white">
+                <div class="bg-gray px-4 py-2 bg-light h5 mb-0 py-1"> Online </div>
+                <ul id="users" class="ps-2"></ul>
+          </div>
+        </div>
+    </div>
+    <%- include ('scripts.ejs') %>
+</body>
+</html>
